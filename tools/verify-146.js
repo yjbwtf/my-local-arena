@@ -1,4 +1,4 @@
-﻿const fs=require('fs'),path=require('path'),crypto=require('crypto');
+const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const VERSION='1.4.6.1';
 const P=`F:/LocalArena-v${VERSION}-local`;
 const GAME='G:/SteamLibrary/steamapps/common/Counter-Strike Global Offensive/game/csgo';
@@ -6,7 +6,23 @@ const SERVER=GAME+'/bin/win64/server.dll';
 const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const man=JSON.parse(fs.readFileSync(path.join(P,'plus-payload-manifest.json'),'utf8'));
 console.log(`manifest: version=${man.package_version} entries=${man.entries.length}`);
-function verify(root,label){let miss=0,bad=0;for(const e of man.entries){const p=path.join(root,e.path);if(!fs.existsSync(p)){miss++;continue;}if(fs.statSync(p).size!==e.size||sha(p)!==e.sha256)bad++;}console.log(`${label}: missing=${miss} mismatch=${bad} -> ${miss+bad===0?'OK':'FAIL'}`);return miss+bad;}
+// "preserve-config" entries (player presets, bot options, difficulty botprofile.vpk)
+// are expected to diverge on purpose - the panel rewrites them and does not treat
+// them as payload corruption - so they are reported separately and never fail.
+function verify(root,label){
+  let miss=0,bad=0,policy=0;const policyPaths=[];
+  for(const e of man.entries){
+    const p=path.join(root,e.path);
+    if(!fs.existsSync(p)){miss++;continue;}
+    if(fs.statSync(p).size!==e.size||sha(p)!==e.sha256){
+      if(e.restore_policy==='preserve-config'){policy++;policyPaths.push(e.path);}
+      else bad++;
+    }
+  }
+  console.log(`${label}: missing=${miss} mismatch=${bad} preserve-config-drift=${policy} -> ${miss+bad===0?'OK':'FAIL'}`);
+  for(const p of policyPaths) console.log(`      (expected) ${p}`);
+  return miss+bad;
+}
 let fail=verify(P,'panel payload (package)')+verify(GAME,'CS2 install     (target) ');
 // record check
 const inst=path.join(P,'.csbip/installations');
