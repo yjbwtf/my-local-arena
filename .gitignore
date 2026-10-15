@@ -1,0 +1,6 @@
+﻿# never publish secrets or bulky release archives
+keys/
+*.pfx
+*.pem
+*.zip
+.csbip/
