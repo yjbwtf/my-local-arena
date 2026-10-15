@@ -1,0 +1,5 @@
+﻿# keep signed/compressed artifacts byte-exact
+feed/latest.json -text
+feed/latest.json.sig -text
+*.zip -text
+*.pdb -text
