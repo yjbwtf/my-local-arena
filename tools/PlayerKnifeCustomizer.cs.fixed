@@ -1,3 +1,24 @@
+// ---------------------------------------------------------------------------
+// MODIFIED FILE NOTICE (AGPL-3.0 section 5a)
+//
+// Upstream : numakkiyu/Local-Arena, tag v1.4.3.3
+//            addons/counterstrikesharp/plugins/PlayerKnifeCustomizer/PlayerKnifeCustomizer.cs
+// Modified : 2026-10-15, by the maintainer of this repository (yjbwtf)
+// Change   : only the AOB signature that resolves
+//            CAttributeList::SetOrAddAttributeValueByName inside Load()
+//              Windows: "40 53 55 41 56 48 81 EC 90 00 00 00"
+//                    -> "48 89 4C 24 ? 53 41 55 41 56"
+//              Linux  : "55 48 89 E5 41 57 41 56 49 89 FE 41 55 41 54 53 48 89
+//                       F3 48 83 EC ? F3 0F 11 85"
+//                    -> "55 48 89 E5 41 57 41 56 41 55 49 89 FD 41 54 53 48 89
+//                       F3 48 83 EC ? F3 0F 11 85"
+// Reason   : after the CS2 2026-09-23 update the old pattern matches nothing in
+//            server.dll, so writing "set item texture prefab/seed/wear" failed
+//            with "Invalid function pointer" and weapon skins rendered wrong.
+// Rebuild  : replace the upstream file with this one and run
+//            `dotnet build -c Release` (CounterStrikeSharp.API 1.0.376, .NET 10).
+// No other part of this file was changed.
+// ---------------------------------------------------------------------------
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Nodes;
