@@ -40,6 +40,8 @@ CS2 在 **2026-09-23** 更新后，换肤插件 `PlayerKnifeCustomizer` 中硬�
 
 面板的更新客户端不带鉴权，因此本仓库（或你自己的发布仓库）需要是**公开库**，"设置 → 在线更新"才能拉到 `latest.json`；私人库的 Release 附件对它是 404。
 
+> **走代理的注意**：面板的 HTTP 客户端（reqwest）只读 `HTTP_PROXY` / `HTTPS_PROXY` 环境变量，**不读 Windows 的"系统代理"设置**。如果你的网络必须经代理才能访问 GitHub，请用 `tools/start-panel-with-proxy.cmd` 启动面板（它会自动读取系统代理并注入环境变量），否则更新检查会报 `Cannot contact GitHub update service`。
+
 **方式二：手动**
 
 1. 下载 Release 里的 `LocalArena-plugin-v1.4.6.1-windows.zip`，解压覆盖到面板目录（保留隐藏的 `.csbip`）。
