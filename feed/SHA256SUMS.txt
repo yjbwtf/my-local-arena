@@ -1,4 +1,4 @@
-c21ac3d6c5b086ffebee971d4fcb20bf0e8ea0ec15e759d98541c646c3c78739  LocalArena-plugin-v1.4.6.1-windows.zip
-ece4b0792c5956b35b7c7329fc9743d920b8adcb5b773c537f34e188fa5d73f7  LocalArena-v1.4.6.1-windows.zip
-3296e7beff37047126bc19561a5da7984ca3fd3e21f281e0068233e88c0a85c5  latest.json
-97e5256f7ed96a20c046e14ab58bd0b09b766cbb63c3f746a26b37c1a7db537c  latest.json.sig
+a46ec1e45d3b5f1d907fb9354ed23b54bbf2dac2d3561dff6dde950016ee9b6c  LocalArena-plugin-v1.4.6.2-windows.zip
+39cf4e4c88fa0dd94cad8b01c3bba4d907c104f5d080a0f92a76be79220e5ef8  LocalArena-v1.4.6.2-windows.zip
+c496d4db979e7425b5d72b09be861b9e733fa8c447d95dd66eea167b8cc5e388  latest.json
+0d27040f5f6809916cc3ab37744c16c9efbd77342ebc879f6fb167d41acc2b4c  latest.json.sig

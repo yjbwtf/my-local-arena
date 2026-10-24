@@ -30,7 +30,7 @@
 
 | 负载目录 | 组件 | 版本 | 许可证 | 源码 / 许可原文 |
 | --- | --- | --- | --- | --- |
-| `addons/counterstrikesharp/**` | [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp) | 1.0.376 | **GPL-3.0**，并附特别例外：**引用其发布 .NET 包的派生作品（插件/扩展）允许改用 MIT** | <https://github.com/roflmuffin/CounterStrikeSharp/tree/v1.0.376>（例外全文见其 `LICENSE`） |
+| `addons/counterstrikesharp/**` | [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp) | 1.0.378 | **GPL-3.0**，并附特别例外：**引用其发布 .NET 包的派生作品（插件/扩展）允许改用 MIT** | <https://github.com/roflmuffin/CounterStrikeSharp/tree/v1.0.378>（例外全文见其 `LICENSE`） |
 | `addons/counterstrikesharp/dotnet/**` | Microsoft .NET 运行时（由 CounterStrikeSharp 官方包捆绑） | 10.0.x | MIT | 许可原文随负载提供：`addons/counterstrikesharp/dotnet/LICENSE.txt` |
 | `addons/metamod/**` | [Metamod:Source](https://github.com/alliedmodders/metamod-source) | 2.0.0-git1406 | **zLib/libpng**（宽松许可） | <https://github.com/alliedmodders/metamod-source>（`LICENSE.txt`） |
 | `addons/RayTrace/**`, `plugins/RayTraceImpl/**`, `shared/RayTraceApi/**` | [Ray-Trace](https://github.com/FUNPLAY-pro-CS2/Ray-Trace) | v1.0.16 | **GPL-3.0** | <https://github.com/FUNPLAY-pro-CS2/Ray-Trace/tree/v1.0.16> |
@@ -50,7 +50,7 @@
 | 修改内容 | 仅替换 `Load()` 中定位 `CAttributeList::SetOrAddAttributeValueByName` 的 AOB 特征码：Windows `40 53 55 41 56 48 81 EC 90 00 00 00` → `48 89 4C 24 ? 53 41 55 41 56`；Linux 分支同步替换；其余代码未改动 |
 | 修改原因 | CS2 2026-09-23 更新后旧特征码在当前 `server.dll` 中匹配 0 处，导致皮肤属性写入失败（贴图渲染错误） |
 | 修改后完整源码 | 本仓库 [`tools/PlayerKnifeCustomizer.cs.fixed`](tools/PlayerKnifeCustomizer.cs.fixed)（完整文件，可直接替换上游同名文件重建） |
-| 重建方式 | 以 Local-Arena v1.4.3.3 源码为基准，替换上述文件后用 .NET 10 SDK 执行 `dotnet build -c Release`（`CounterStrikeSharp.API` 1.0.376） |
+| 重建方式 | 以 Local-Arena v1.4.3.3 源码为基准，替换上述文件后用 .NET 10 SDK 执行 `dotnet build -c Release`（`CounterStrikeSharp.API` 1.0.378） |
 
 未列出的所有文件均与上游发布包**逐字节一致**（可用 `feed/SHA256SUMS.txt` 与各上游发布包的 SHA-256 复核）。
 

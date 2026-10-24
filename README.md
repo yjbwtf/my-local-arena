@@ -15,7 +15,7 @@
 | 部分 | 内容 |
 | --- | --- |
 | 面板 Panel | 官方 Local-Arena **1.4.3.3** 可执行文件，**原版未改动**（源码：Local-Arena `v1.4.3.3`） |
-| 插件负载 Plugin payload | **1.4.6.1** = Local-Arena 1.4.3.3 的 plus 组件 + CS2-Bot-Improver **1.4.6** 增强人机 + 下面这一处修复 |
+| 插件负载 Plugin payload | **1.4.6.2** = Local-Arena 1.4.3.3 的 plus 组件 + CS2-Bot-Improver **1.4.6** 增强人机 + CounterStrikeSharp **1.0.378** + 下面这两处修复 |
 
 ## 本构建唯一的代码改动
 
@@ -44,11 +44,11 @@ CS2 在 **2026-09-23** 更新后，换肤插件 `PlayerKnifeCustomizer` 中硬�
 
 **方式二：手动**
 
-1. 下载 Release 里的 `LocalArena-plugin-v1.4.6.1-windows.zip`，解压覆盖到面板目录（保留隐藏的 `.csbip`）。
+1. 下载 Release 里的 `LocalArena-plugin-v1.4.6.2-windows.zip`，解压覆盖到面板目录（保留隐藏的 `.csbip`）。
 2. 用面板的"安装 / 修复安装"把它写入 `…\Counter-Strike Global Offensive\game\csgo`（必须先完全关闭 CS2）。
-3. 完整包 `LocalArena-v1.4.6.1-windows.zip` 可直接解压当便携面板用。
+3. 完整包 `LocalArena-v1.4.6.2-windows.zip` 可直接解压当便携面板用。
 
-> 面板左下角 / 标题栏显示的版本是**面板二进制**的构建版本 1.4.3.3，与插件负载版本 1.4.6.1 是两回事；"概览 → 安装"与"设置 → 安装与恢复"里显示的才是负载版本。
+> 面板左下角 / 标题栏显示的版本是**面板二进制**的构建版本 1.4.3.3，与插件负载版本 1.4.6.2 是两回事；"概览 → 安装"与"设置 → 安装与恢复"里显示的才是负载版本。
 
 ## 隐私
 
