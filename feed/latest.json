@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_version": "1.4.6.2",
-  "published_at": "2026-10-24T03:04:29.267Z",
+  "release_version": "1.4.7.1",
+  "published_at": "2026-10-26T04:22:08.613Z",
   "release_notes_url": "https://github.com/numakkiyu/Local-Arena/releases",
   "components": {
     "panel": {
@@ -12,10 +12,10 @@
       "min_panel_version": "1.4.2.4"
     },
     "plugin": {
-      "version": "1.4.6.2",
-      "url": "https://github.com/yjbwtf/my-local-arena/releases/download/v1.4.6.2/LocalArena-plugin-v1.4.6.2-windows.zip",
-      "size": 76126275,
-      "sha256": "a46ec1e45d3b5f1d907fb9354ed23b54bbf2dac2d3561dff6dde950016ee9b6c",
+      "version": "1.4.7.1",
+      "url": "https://github.com/yjbwtf/my-local-arena/releases/download/v1.4.7.1/LocalArena-plugin-v1.4.7.1-windows.zip",
+      "size": 76259218,
+      "sha256": "97228fa33d01fd00c68787e51d51b8cc5dabd6f93755280f5f23e794456aa043",
       "min_panel_version": "1.4.3.3"
     }
   }

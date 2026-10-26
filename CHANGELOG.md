@@ -1,5 +1,13 @@
 # 更新记录
 
+## 1.4.7.1 - 2026-10-26
+
+合并上游 **CS2-Bot-Improver v1.4.7**（2026-10-25）。
+
+- 上游变化：Windows/Linux 签名与偏移全面更新（适配 CS2 1.41.9.2）、综合 FPS 改进、稳定性增强、面板加入版本检测、若干 bug 修复。
+- 合并 23 个文件：`BotAI` / `BotAimImprover` / `BotBuy`(未变) / `BotRandomizer` / `BotState` / `NadeSystem` / `BotControllerImpl`、原生 `BotController` / `BotVision`（含新 `gamedata.json`，修掉 `GetSmokeDensityInLine` 在 1.41.9.2 上失效）、`BotControllerApi`、三个 `gamemode_*.cfg`。
+- 保持不变：换肤插件（含 9/23 特征码修复）、Local-Arena plus 组件、`BotHider` v0.5.1（与 plus 组件成对，签名在当前 `server.dll` 全部命中）、CounterStrikeSharp 1.0.378（与 v1.4.7 官方包逐字节一致）、已转换的 `overrides/*/botprofile.vpk`（上游自 1.4.6 未改动）。
+- 负载 / 安装登记 / 清单同步为 1.4.7.1，Release 附件 SHA-256 与本地产出一致。
 ## 1.4.6.2 - 2026-10-24
 
 **CS2 1.41.9.2（10/22-23 更新）启动闪退修复。**
