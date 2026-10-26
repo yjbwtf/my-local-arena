@@ -23,8 +23,31 @@ const pluginZipName = `LocalArena-plugin-v${VERSION}-windows.zip`;
 const fullZipName = `LocalArena-v${VERSION}-windows.zip`;
 const feedPluginVersion = process.argv[3] || VERSION;
 
-const officialLatest = 'F:/LocalArena-v1.4.3.3-windows/.csbip/updates/latest.json';
-const official = JSON.parse(fs.readFileSync(officialLatest, 'utf8'));
+// The Panel component entry is pinned to the official 1.4.3.3 panel so the running
+// panel never tries to replace itself. Prefer the official manifest still cached next
+// to the panel, and fall back to the recorded official values.
+const OFFICIAL_PANEL = {
+  version: '1.4.3.3',
+  url: 'https://github.com/numakkiyu/Local-Arena/releases/download/v1.4.3.3/LocalArena-panel-v1.4.3.3-windows.zip',
+  size: 41993664,
+  sha256: '7e9cec89ec27fc490e277874d4a9a155e453d889f790f322aa519c722e5bf1e1',
+  min_panel_version: '1.4.2.4',
+};
+let officialPanel = OFFICIAL_PANEL;
+for (const candidate of [
+  `F:/LocalArena-v${VERSION}-local/.csbip/updates/latest.json`,
+  'F:/LocalArena-v1.4.3.4-local/.csbip/updates/latest.json',
+]) {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(candidate, 'utf8'));
+    if (parsed?.components?.panel) {
+      officialPanel = { ...parsed.components.panel, version: '1.4.3.3' };
+      break;
+    }
+  } catch {
+    /* fall through to the recorded values */
+  }
+}
 
 const pluginZip = path.join(RELEASE, pluginZipName);
 if (!fs.existsSync(pluginZip)) throw new Error(`missing ${pluginZip} - build the ZIPs first`);
@@ -35,10 +58,11 @@ const latest = {
   schema_version: 1,
   release_version: VERSION,
   published_at: new Date().toISOString(),
-  release_notes_url: 'https://github.com/numakkiyu/Local-Arena/releases',
+  // the panel's "更新说明" button opens exactly this URL, so point it at OUR release
+  release_notes_url: `${FEED_BASE}/releases/tag/v${VERSION}`,
   components: {
     // keep the pinned official panel entry so the running panel never tries to replace itself
-    panel: { ...official.components.panel, version: '1.4.3.3' },
+    panel: officialPanel,
     plugin: {
       version: feedPluginVersion,
       url: `${FEED_BASE}/releases/download/v${VERSION}/${pluginZipName}`,

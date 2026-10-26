@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "release_version": "1.4.7.1",
-  "published_at": "2026-10-26T04:22:08.613Z",
-  "release_notes_url": "https://github.com/numakkiyu/Local-Arena/releases",
+  "published_at": "2026-10-26T04:44:28.277Z",
+  "release_notes_url": "https://github.com/yjbwtf/my-local-arena/releases/tag/v1.4.7.1",
   "components": {
     "panel": {
       "version": "1.4.3.3",
