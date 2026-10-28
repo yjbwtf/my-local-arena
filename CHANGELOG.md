@@ -1,5 +1,14 @@
 # 更新记录
 
+## 1.4.7.2 - 2026-10-28
+
+修复 **OfflineMatchTelemetry 每个 tick 抛异常**造成的卡顿 / 假死 / 崩溃。
+
+- 现象：机器人数满一局后，`[OMT] Live player poll error` 每 tick 刷一次（≈46 次/秒）。10/27 晚上 `cs_militia` 局 46 秒内 2953 条，随后 21:14:56 `cs2.exe` 崩溃（`counterstrikesharp.dll` / `0xc0000409` / `0x296f8`）；`de_dust2_christmas` 局 1170 条，随后 22:35:39 系统记录 AppHangTransient（"顿住"）。历史峰值 10/09 达 356 453 条/天（日志 277 MB）。
+- 根因：`PlayingPlayers().ToDictionary(PlayerId)`，机器人没有 SteamID，多个 bot 的 id 都是 `"0"` → `ArgumentException: An item with the same key has already been added. Key: 0`。
+- 修复：新增 `PlayingPlayersById()`（`TryAdd`）并用于 `PollLivePlayerEvents()` / `FinalizeEventRound()`；`CachePlayers()` 改用索引器赋值。三处按 SteamID 建字典的地方都改为容忍重复键。
+- 修改后完整源码：`tools/OfflineMatchTelemetry.cs.fixed`（含 AGPL-3.0 §5(a) 修改声明）。
+- 负载 / 安装登记 / 清单同步为 1.4.7.2，Release 附件 SHA-256 与本地产出一致。
 ## 1.4.7.1 - 2026-10-26
 
 合并上游 **CS2-Bot-Improver v1.4.7**（2026-10-25）。

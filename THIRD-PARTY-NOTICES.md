@@ -52,6 +52,7 @@
 | 修改后完整源码 | 本仓库 [`tools/PlayerKnifeCustomizer.cs.fixed`](tools/PlayerKnifeCustomizer.cs.fixed)（完整文件，可直接替换上游同名文件重建） |
 | 重建方式 | 以 Local-Arena v1.4.3.3 源码为基准，替换上述文件后用 .NET 10 SDK 执行 `dotnet build -c Release`（`CounterStrikeSharp.API` 1.0.378） |
 
+| 第二处修改（2026-10-28） | `addons/counterstrikesharp/plugins/OfflineMatchTelemetry/OfflineMatchTelemetry.cs`（同样来自 Local-Arena v1.4.3.3）：按 SteamID 建字典时容忍机器人共用 id "0"（`PlayingPlayersById()` / 索引器赋值），修复每个 tick 抛 `ArgumentException` 造成的卡顿与无响应。修改后完整源码：`tools/OfflineMatchTelemetry.cs.fixed`。其余文件未改动。 |
 未列出的所有文件均与上游发布包**逐字节一致**（可用 `feed/SHA256SUMS.txt` 与各上游发布包的 SHA-256 复核）。
 
 ## 六、源码获取
