@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "package_version": "1.4.6.1",
+  "package_version": "1.4.7.3",
   "entries": [
     {
       "path": "addons/BotController/bin/win64/BotController.dll",
-      "size": 2197504,
-      "sha256": "c957e7cdec12a0e8ee20cb45c18bd1f16d2dfeebf5b5f2324a3adbfabb314756",
+      "size": 2204672,
+      "sha256": "3ce93e6377ea02c6f398802d12cb1245c0b4e464327be0d5267c65084650a333",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -60,8 +60,8 @@
     },
     {
       "path": "addons/BotVision/bin/win64/BotVision.dll",
-      "size": 1910784,
-      "sha256": "61dc2de390e35c0bc20d315fb037a06017df680cd07cf9a559f842835f94681c",
+      "size": 2334208,
+      "sha256": "1a6bac379a2be37ff83799937d1762d3813af8810dad65d77642d1197ee4f89a",
       "component": "BotVision",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -76,8 +76,8 @@
     },
     {
       "path": "addons/BotVision/gamedata.json",
-      "size": 3260,
-      "sha256": "12b30b3bc88def7fdb148203eec1662647aaaf0d5a41a3eb2372b8e486b0bccd",
+      "size": 3116,
+      "sha256": "72347e5892bb2e18e81685a716312e3986bc780fefeec25a050d82aa879161ad",
       "component": "BotVision",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -100,24 +100,24 @@
     },
     {
       "path": "addons/counterstrikesharp/api/CounterStrikeSharp.API.deps.json",
-      "size": 33278,
-      "sha256": "e0997815272b22dec926dee70e3a029a4be99d266a9f6f804f57454b6d93945b",
+      "size": 36107,
+      "sha256": "71b9da06f0417b7e29a5b114be0cc63bc41176ec1958b8ceb9f321e9495451a6",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/api/CounterStrikeSharp.API.dll",
-      "size": 1889280,
-      "sha256": "e81f05d960c37ee623d552733fc919e206c8c1d16157886342d06a2f4d0dab17",
+      "size": 1902080,
+      "sha256": "c79a83e04faae9eb26e20be3631a4d183861c72ee194ed855492218471bab6c8",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/api/CounterStrikeSharp.API.pdb",
-      "size": 533936,
-      "sha256": "ece0e5fc40cb5ebdd1bbd54c0ad7c5fe7c8a4ddc1ae3b11612e2eafcc1a89f6b",
+      "size": 537332,
+      "sha256": "8a62e14e787173f4567232038dddc7c7afca20da9dd41468bfed3e412242dd7a",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -132,8 +132,8 @@
     },
     {
       "path": "addons/counterstrikesharp/api/CounterStrikeSharp.API.xml",
-      "size": 131620,
-      "sha256": "6c60cc9f4a3f3f4a6bc8b1c9ef99cb422ea98f0d426b3d713a05d0b5fa260a85",
+      "size": 135239,
+      "sha256": "f0cd10d413ca25dab0afd970e9288d2bf7258dc7cbe95faabf25d81a2ba43b70",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -468,8 +468,8 @@
     },
     {
       "path": "addons/counterstrikesharp/bin/win64/counterstrikesharp.dll",
-      "size": 3789312,
-      "sha256": "1353cbbf1b92e2a12f1dd36cb37fcdd34d31bc7da40ece47a873f8d7eb1e9c9c",
+      "size": 3793920,
+      "sha256": "afdaae023f5d7d6c7b18619a547be0805a94892258c9e74bebc8a80069d07e03",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3236,8 +3236,8 @@
     },
     {
       "path": "addons/counterstrikesharp/gamedata/gamedata.json",
-      "size": 8892,
-      "sha256": "a86b78c2add744c8031030bf7f5fbcf68f00b2121d50776c6108b7f6922bd48c",
+      "size": 8794,
+      "sha256": "af0348ff2705b09906ee98a2d2c70ed83a42b1b8acc912451695d3d97e60358f",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3309,7 +3309,7 @@
     {
       "path": "addons/counterstrikesharp/plugins/BotAI/BotAI.deps.json",
       "size": 34671,
-      "sha256": "0967a0b388a2f40613c9788a586b44bd4175dbe0454664d8a2f332ed31bfc527",
+      "sha256": "317fa1fbe3fff3d421240a5dd22f995326190f6155739fcdbbe4bce5e074892a",
       "component": "BotAI",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3317,7 +3317,7 @@
     {
       "path": "addons/counterstrikesharp/plugins/BotAI/BotAI.dll",
       "size": 37888,
-      "sha256": "0488146396a9de5c182ebea82018c203fb45dacfe3d2a3ff51dbb36a0df1fff4",
+      "sha256": "bdd0ad36b55596538ba45eb5671df3344edb5ca9bb4eb3c3c0482f46ad82e7ca",
       "component": "BotAI",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3325,7 +3325,7 @@
     {
       "path": "addons/counterstrikesharp/plugins/BotAI/BotAI.pdb",
       "size": 18008,
-      "sha256": "09949081676b04dc6f66ddd1a4685232f2d2bd9d96082db70b80993a7d3c261b",
+      "sha256": "caaf4210a8e8ff5b041279b26b4942a7c58cdce811454c7a968a18ec69144836",
       "component": "BotAI",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3333,23 +3333,23 @@
     {
       "path": "addons/counterstrikesharp/plugins/BotAimImprover/BotAimImprover.deps.json",
       "size": 34698,
-      "sha256": "4f517c58e96582c2ac5b2bbfdd478f50b79020adf3f030811d72e8c338e00f7b",
+      "sha256": "4dfda80bfe0f02951ecb53ed336c931950657e859b44b47e9b28981d572f7b41",
       "component": "BotAimImprover",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/BotAimImprover/BotAimImprover.dll",
-      "size": 15872,
-      "sha256": "d11a2e2d67f8fba62afb22ce958926b63ff34b74022e9c0d192d1c61e318b77a",
+      "size": 16384,
+      "sha256": "ceb90a88fe0137ef15da14d461ec63627c24ddad08a4987f7491e2c827603ad2",
       "component": "BotAimImprover",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/BotAimImprover/BotAimImprover.pdb",
-      "size": 16024,
-      "sha256": "0d3074782bf23a181a3819c9dbf022e6ed575f1d618b0e134b742542c8f866e7",
+      "size": 15864,
+      "sha256": "32ffb123e951d77478763d0d7237e2dda910c03144af9c017a1e350184366e54",
       "component": "BotAimImprover",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3389,7 +3389,7 @@
     {
       "path": "addons/counterstrikesharp/plugins/BotControllerImpl/BotControllerImpl.dll",
       "size": 27136,
-      "sha256": "3e5cea0532c30b416bb23626b111b22ffdbf63ed251decf7bc91c5705b83b1e2",
+      "sha256": "679000c8aad08f5541145b562405de45462bc0778a939aa25090b9d30e7b05a2",
       "component": "BotControllerImpl",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3437,23 +3437,23 @@
     {
       "path": "addons/counterstrikesharp/plugins/BotRandomizer/BotRandomizer.deps.json",
       "size": 34695,
-      "sha256": "1e1a0990ebfff84a232128a8f431a988b5d4e3f118c4509ba1371875d7c2dd08",
+      "sha256": "e44390bd6836cbde6f1eef567964f55c8513e86fec7f75f10b10cddbda2637d0",
       "component": "BotRandomizer",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/BotRandomizer/BotRandomizer.dll",
-      "size": 107008,
-      "sha256": "96fdb406fc156f9cedc565553dac951581527f54c0bd725d8d2fb86a596e862e",
+      "size": 108544,
+      "sha256": "d0744311705b38f7d961f028fff89246370e981691766972e6a16dd1c4348633",
       "component": "BotRandomizer",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/BotRandomizer/BotRandomizer.pdb",
-      "size": 34740,
-      "sha256": "bb1f57c16bb266181ca2201d846bf0d4ee63d6ea0e2f3f468404624894804cf2",
+      "size": 35016,
+      "sha256": "d37538813700bec95500d38771aa56d9c8d0fdf49ddd47a26f8b2f046648fa6f",
       "component": "BotRandomizer",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3485,23 +3485,23 @@
     {
       "path": "addons/counterstrikesharp/plugins/BotState/BotState.deps.json",
       "size": 34680,
-      "sha256": "5bfda524b8cba8178a06d511ac4a0f9dc78abc764e7cd3af484fa02b48fe13ab",
+      "sha256": "bbab83c5804134cf4db98bc109e34d929fc66a12ea0e8c0ef450912f0fc2ac67",
       "component": "BotState",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/BotState/BotState.dll",
-      "size": 72704,
-      "sha256": "f756cd40a2baae13794a20c465cfa5e037624cc16944094df4b1376bcd809790",
+      "size": 74240,
+      "sha256": "7717e2f42e1c65bbec61e4a0fe891e70aeae9f886f7540d019a31ff03a99a199",
       "component": "BotState",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/BotState/BotState.pdb",
-      "size": 33592,
-      "sha256": "c1fce218391196e8660b358ae8bdb773e64b1e20b16bf230e92d1d4f62f7403f",
+      "size": 33980,
+      "sha256": "3f4d21fa727f2621a4be788a77e654985581d0ef78c0bac5cb4d12490efcfeeb",
       "component": "BotState",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3509,23 +3509,23 @@
     {
       "path": "addons/counterstrikesharp/plugins/NadeSystem/NadeSystem.deps.json",
       "size": 34686,
-      "sha256": "3e62251389bdff1d250203f1fff3e942462d2f617e0a797c1edbbf5ea3475266",
+      "sha256": "712f6eeb3dfff77212f8919502e9fdbf8c0cf51db15a89fe6427b898341ef833",
       "component": "NadeSystem",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/NadeSystem/NadeSystem.dll",
-      "size": 71680,
-      "sha256": "5d67365de159eff23055b59d99ea2f88cd07e7ccd4d61800e79879d83b336945",
+      "size": 70656,
+      "sha256": "2a5a68a31221818977582b45701ebb46b077eceab9f7630104f5155c46f69866",
       "component": "NadeSystem",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/NadeSystem/NadeSystem.pdb",
-      "size": 30356,
-      "sha256": "ad66e2d63aa76918a0d00a5cf899420953e3de83cd8d3bbaf81e69967223886f",
+      "size": 30180,
+      "sha256": "f2664b7e4e646c284327802c722bfb86da1e6797b9d0edb591d95e375397d5e9",
       "component": "NadeSystem",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -3949,15 +3949,15 @@
     {
       "path": "addons/counterstrikesharp/plugins/OfflineMatchTelemetry/OfflineMatchTelemetry.dll",
       "size": 79360,
-      "sha256": "f9583398129c12ebc0e139468d31373eeebfe393369b438d446f130ff092c58f",
+      "sha256": "6993eee3b006a5d1f909f3c2d2d2c83b3429edea2bc5cc80923b1636eead16cf",
       "component": "OfflineMatchTelemetry",
       "ownership": "plus",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/OfflineMatchTelemetry/OfflineMatchTelemetry.pdb",
-      "size": 29016,
-      "sha256": "ccda15a783648f69e659a36b0fbda2cff22f4ed30414910a4e5516000e69d742",
+      "size": 29176,
+      "sha256": "2128d4bcb107b29e9e17d4737b5189b002074aa7a8593cd23efc6332e60777e1",
       "component": "OfflineMatchTelemetry",
       "ownership": "plus",
       "restore_policy": "restore"
@@ -4100,16 +4100,16 @@
     },
     {
       "path": "addons/counterstrikesharp/plugins/PlusMatchCoordinator/PlusMatchCoordinator.dll",
-      "size": 38400,
-      "sha256": "bb77fbfcefb26e93ec846358bfe2b2882c0eee99871ed25dbc210f1704715c4d",
+      "size": 38912,
+      "sha256": "d5764a938ae191188abf64fcae597f88edc990b43dd8c4a905d7dca65b5ce667",
       "component": "PlusMatchCoordinator",
       "ownership": "plus",
       "restore_policy": "restore"
     },
     {
       "path": "addons/counterstrikesharp/plugins/PlusMatchCoordinator/PlusMatchCoordinator.pdb",
-      "size": 21568,
-      "sha256": "405905bf94688ec7707479480e94bd5a428b6279cec7816675b5f8e78b1c329e",
+      "size": 20944,
+      "sha256": "78c941662925e993dc4af28a72576d75846c681d9c59e9cdad74d3e9b3931b00",
       "component": "PlusMatchCoordinator",
       "ownership": "plus",
       "restore_policy": "restore"
@@ -4581,7 +4581,7 @@
     {
       "path": "addons/counterstrikesharp/shared/BotControllerApi/BotControllerApi.dll",
       "size": 9216,
-      "sha256": "d0fe3c696654de54c4bb31341cf7e02c6414108e97295ed99e9663fc653f7849",
+      "sha256": "06da3905c875b5273d87b30d52fa0e6aa16c5a1d162ed6f77694a38c2878ae58",
       "component": "runtime",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -5372,24 +5372,24 @@
     },
     {
       "path": "cfg/gamemode_casual.cfg",
-      "size": 4571,
-      "sha256": "2058b96690720727a23e6c3edb00228635e6db87a5212e16a07f98edb68fb90d",
+      "size": 4578,
+      "sha256": "43a3ff7321ded73360fa8b6de5041ac4cf288e8dfff6dec66d2f0d08a31b0d97",
       "component": "configuration",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "cfg/gamemode_competitive.cfg",
-      "size": 4498,
-      "sha256": "cb64d1a9e724c05c3f9662c44ce001789a927645197c1e3e4e613861e592e82d",
+      "size": 4505,
+      "sha256": "a9c1119649aa01b4dee6c9ef988bbeaf47d3a598689ad09e00fe415812baa41c",
       "component": "configuration",
       "ownership": "shared",
       "restore_policy": "restore"
     },
     {
       "path": "cfg/gamemode_competitive2v2.cfg",
-      "size": 4437,
-      "sha256": "8753cf0fade1d80f8a8a60776951a41bb32d7605b25fe77ab0f6f8bdf8249795",
+      "size": 4444,
+      "sha256": "8334da2517d6dcc63dc20246616e6ba11e7d3ea7f74507b262d0e7822491f2fb",
       "component": "configuration",
       "ownership": "shared",
       "restore_policy": "restore"
@@ -5436,8 +5436,8 @@
     },
     {
       "path": "cfg/gamemode_retakecasual.cfg",
-      "size": 4276,
-      "sha256": "3364d4243c919166ba366937707a47636837eeb4370726bb89cc887fd16f24c9",
+      "size": 4339,
+      "sha256": "6ae84edc6b4412635bd14b91e2c4bd6dc151b5adf714f9806da664cd45e015a3",
       "component": "configuration",
       "ownership": "shared",
       "restore_policy": "restore"

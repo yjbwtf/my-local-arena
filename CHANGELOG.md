@@ -1,5 +1,27 @@
 # 更新记录
 
+## 1.4.7.3 - 2026-11-12
+
+**CS2 1.41.9.7（11/11-12 更新，build 2000943）启动闪退修复 + retake cfg 哈希告警修复。**
+
+- 现象：`cs2.exe -insecure` 带插件启动后 2~10 秒闪退；三个转储的异常点完全一致：
+  `counterstrikesharp.dll+0xbc7cb`、`0xc0000005`、读取 `0xffffffff00000000`。
+  进图后还有第二处崩溃：`RoundDamageRecap.OnRoundStart → NativeAPI.ClientPrint`，
+  进程以 .NET 未处理异常终止（`coreclr.dll` / `0xc0000005` / `0x36842a`）。
+- 根因：1.41.9.7 把 `IGameEventSystem::PostEventAbstract` 的 net message 句柄从
+  `INetworkMessageInternal*`（有虚表）改成 `NetMessageInfo_t`（无虚表）。CSSharp 1.0.378/1.0.379
+  仍按虚调用取 `GetNetMessageInfo()` / `AllocateMessage()` → 读到垃圾虚表。
+- 修复：CounterStrikeSharp **1.0.378 → 1.0.380**（上游 2026-11-12 `2eb9a57`，PR #1490）。
+  仅替换 `addons/counterstrikesharp/{api,bin,gamedata,lang}`；插件、Metamod、原生 BotController/
+  BotHider/BotVision 全部保持原样。签名扫描：28 条 Windows 签名 27 条命中，唯一缺失的
+  `CCSNavArea_IsValidNavMesh` 上游 1.0.380 也未收录（且不参与启动路径）。
+- 顺带修复面板 "缺失文件 (1)"：Steam 更新覆盖了 `cfg/gamemode_retakecasual.cfg`。以新版官方文件
+  为底重新合并，保留新增的 `mp_bot_ai_bt "scripts/ai/retakes/bt_default.kv3"`，恢复
+  `mp_freezetime 7` / `mp_round_restart_delay 5` / `exec my_bot_normal_config.cfg`。
+- 负载 / 安装登记 / 清单同步为 1.4.7.3；面板"验证安装"硬缺失 0（保留 5 项 preserve-config 个人配置漂移，面板按设计忽略）。
+- 未合并上游 CS2-Bot-Improver 1.4.8：它仍是 11/07 的构建，BotController v0.9.0 / BotHider v0.7.0
+  的 API 与本地自编译 Impl / PlusMatchCoordinator 不兼容，等上游 1.41.9.7 适配版。
+
 ## 1.4.7.2 - 2026-10-28
 
 修复 **OfflineMatchTelemetry 每个 tick 抛异常**造成的卡顿 / 假死 / 崩溃。

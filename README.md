@@ -15,9 +15,35 @@
 | 部分 | 内容 |
 | --- | --- |
 | 面板 Panel | 官方 Local-Arena **1.4.3.3** 可执行文件，**原版未改动**（源码：Local-Arena `v1.4.3.3`） |
-| 插件负载 Plugin payload | **1.4.7.2** = Local-Arena 1.4.3.3 的 plus 组件 + CS2-Bot-Improver **1.4.7** 增强人机 + CounterStrikeSharp **1.0.378** + 下面这两处修复 |
+| 插件负载 Plugin payload | **1.4.7.3** = Local-Arena 1.4.3.3 的 plus 组件 + CS2-Bot-Improver **1.4.7** 增强人机 + CounterStrikeSharp **1.0.380** + 下面这些修复 |
 
-## 本构建唯一的代码改动
+## 本构建的改动
+
+### 1) CS2 1.41.9.7 兼容（1.4.7.3，2026-11-12）
+
+CS2 在 **2026-11-11/12** 更新到 1.41.9.7（build 2000943），把网络消息句柄从带虚表的
+`INetworkMessageInternal*` 换成了无虚表的 `NetMessageInfo_t`。CounterStrikeSharp 1.0.378/1.0.379
+仍按老 ABI 做虚调用，于是：
+
+- 启动后 2~10 秒、每条用户消息都会在 `UserMessage::GetMessageID()` 崩：
+  `counterstrikesharp.dll+0xbc7cb`、`0xc0000005`、读取 `0xffffffff00000000`；
+- 插件调用 `Utilities.PrintToChat`（例如 RoundDamageRecap 开局播报）时，同一个 ABI 问题会在
+  `NativeAPI.ClientPrint` 里把 `coreclr.dll` 打崩。
+
+修复：CounterStrikeSharp 升到 **1.0.380**（上游 `2eb9a57 fix: Game Update 1.41.9.7` / PR #1490，
+2026-11-12 发布）。只替换 `addons/counterstrikesharp/{api,bin,gamedata,lang}`，其余插件不动。
+
+另外，Steam 这次更新覆盖了 `cfg/gamemode_retakecasual.cfg`（新增
+`mp_bot_ai_bt "scripts/ai/retakes/bt_default.kv3"`，并把 `mp_freezetime` / `mp_round_restart_delay`
+改回官方值、删掉 `exec my_bot_normal_config.cfg`），面板因此报 "缺失文件 (1) / hash mismatch"。
+本版以新版官方文件为底重新合并：保留官方新增的 `mp_bot_ai_bt`，恢复自定义的
+`mp_freezetime 7`、`mp_round_restart_delay 5` 与 `exec my_bot_normal_config.cfg`。
+
+> 上游 CS2-Bot-Improver 目前仍停在 v1.4.8（2026-11-07），没有针对 1.41.9.7 的版本；
+> 其 BotController v0.9.0 / BotHider v0.7.0 与本地自编译的 Impl / PlusMatchCoordinator 插件 API 不兼容，
+> 因此本版**没有**合并 1.4.8，等上游发 1.41.9.7 适配版后再评估。
+
+### 2) 换肤特征码（1.4.6.1）
 
 CS2 在 **2026-09-23** 更新后，换肤插件 `PlayerKnifeCustomizer` 中硬编码的 AOB 特征码失效（旧 `40 53 55 41 56 48 81 EC 90 00 00 00` 在新的 `server.dll` 中匹配 **0 处**），导致皮肤"换上了但贴图渲染错误"（AK-47 / M4A1消音版 / USP消音版 印花集、AWP 可燃冰 等），日志中满是 `Invalid function pointer`。
 
@@ -44,11 +70,11 @@ CS2 在 **2026-09-23** 更新后，换肤插件 `PlayerKnifeCustomizer` 中硬�
 
 **方式二：手动**
 
-1. 下载 Release 里的 `LocalArena-plugin-v1.4.7.2-windows.zip`，解压覆盖到面板目录（保留隐藏的 `.csbip`）。
+1. 下载 Release 里的 `LocalArena-plugin-v1.4.7.3-windows.zip`，解压覆盖到面板目录（保留隐藏的 `.csbip`）。
 2. 用面板的"安装 / 修复安装"把它写入 `…\Counter-Strike Global Offensive\game\csgo`（必须先完全关闭 CS2）。
-3. 完整包 `LocalArena-v1.4.7.2-windows.zip` 可直接解压当便携面板用。
+3. 完整包 `LocalArena-v1.4.7.3-windows.zip` 可直接解压当便携面板用。
 
-> 面板左下角 / 标题栏显示的版本是**面板二进制**的构建版本 1.4.3.3，与插件负载版本 1.4.7.2 是两回事；"概览 → 安装"与"设置 → 安装与恢复"里显示的才是负载版本。
+> 面板左下角 / 标题栏显示的版本是**面板二进制**的构建版本 1.4.3.3，与插件负载版本 1.4.7.3 是两回事；"概览 → 安装"与"设置 → 安装与恢复"里显示的才是负载版本。
 
 ## 隐私
 
